@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 1</title>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        var planets = [
+            {
+                "color": "orange",
+                "size": "50",
+                "rotation": 0,
+                "distance": 0,
+                "speed": 0
+            },
+            {
+                "color": "#B3ACAA",
+                "size": "7",
+                "rotation": 0,
+                "distance": 50,
+                "speed": 11 * Math.PI / 180
+            },
+            {
+                "color": "#8E7512 ",
+                "size": "10",
+                "rotation": 0,
+                "distance": 50,
+                "speed": 8 * Math.PI / 180
+            },
+            {
+                "color": "#378FBB",
+                "size": "10",
+                "rotation": 0,
+                "distance": 50,
+                "speed": 9 * Math.PI / 180
+            },
+            {
+                "color": "#553B00  ",
+                "size": "7",
+                "rotation": 0,
+                "distance": 50,
+                "speed": 6 * Math.PI / 180
+            },
+            {
+                "color": "#B2B3B3",
+                "size": "12",
+                "rotation": 0,
+                "distance": 50,
+                "speed": 3 * Math.PI / 180
+            },
+            {
+                "color": "#BEC223",
+                "size": "10",
+                "rotation": 0,
+                "distance": 50,
+                "speed": 2 * Math.PI / 180
+            },
+            {
+                "color": "#0037D2",
+                "size": "10",
+                "rotation": 0,
+                "distance": 50,
+                "speed": 1 * Math.PI / 180
+            },
+            {
+                "color": "#6EE3FF",
+                "size": "10",
+                "rotation": 0,
+                "distance": 50,
+                "speed": 1.5 * Math.PI / 180
+            }
+        ];
+        
+        var distance = [];
+        for (var i = 0; i < 9; i++) {
+            planets[i].distance += (i * 23);
+        }
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", 500)
+            .attr("height", 500)
+            .style("background-color", "black");
+
+
+        svg.selectAll("rect")
+            .data(planets)
+            .enter()
+            .append("circle")
+            .attr("cx", svg.attr("width") / 2)
+            .attr("cy", svg.attr("height") / 2)
+            .attr("r", function (d) { return d.distance; })
+            .attr("fill", "none")
+            .attr("stroke", "white")
+            .attr("stroke-width", 1);
+
+        svg.selectAll("rect")
+            .data(planets)
+            .enter()
+            .append("circle")
+            .attr("cx", function(d){return svg.attr("width") / 2 +d.distance ;})
+            .attr("cy", svg.attr("height") / 2)
+            .attr("r", function (d) { return d.size })
+            .attr("fill", function (d) { return d.color })
+
+
+        setInterval(update, 100);
+
+        function update() {
+            
+            var circles = d3.selectAll("circle");
+            for (var i = 10; i < 18; i++) {
+                d3.select(circles[0][i])
+                    .transition()
+                    .delay(0)
+                    .duration(100)
+                    
+                    .attr('cx', function (d) { return svg.attr("width") / 2 + Math.cos(d.rotation) * d.distance; })
+                    .attr('cy', function (d) { return svg.attr("height") / 2 + Math.sin(d.rotation) * d.distance; });
+            }
+            for (var planet in planets){
+                planets[planet].rotation += planets[planet].speed;
+            }
+        }
+    </script>
+</body>
+
+</html>

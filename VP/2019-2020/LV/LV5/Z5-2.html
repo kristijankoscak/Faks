@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 2</title>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+    <script>
+        var width = 960;
+        var height = 700;
+
+        var projection = d3.geo.mercator()
+            .center([0, 10])
+            .scale(6000)
+            .translate([17600, 4500])
+            .rotate([-180, 0]);
+
+        var path = d3.geo.path()
+            .projection(projection);
+
+        var svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .style("background", "lightblue")
+            .call(d3.behavior.zoom().on("zoom", function () {
+                svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
+            }))
+        d3.json("cro_regv3.json", function (error, cro) {
+            var data = topojson.feature(cro, cro.objects.layer1);
+            var states = svg.selectAll("path.county")
+                .data(data.features)
+                .enter()
+                .append("path")
+                .attr("class", "county")
+                .attr("id", function (d) { return d.id; })
+                .attr("d", path).style("fill", "gray")
+                .style("stroke", "black")
+                .style("stroke-width", 1)
+                .style("stroke-opacity", 1);
+
+            states.on("mouseover", function (d) {
+                $("#zupanija").empty()
+                $("#zupanija").append("<span>Zupanija: " + d.properties.name + " </span>")
+            })
+        });
+
+    </script>
+    <div id="zupanija">
+        <span>Zupanija</span>
+    </div>
+</body>
+
+</html>

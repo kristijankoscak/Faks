@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 5</title>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        var data1 = [];
+        var data2 = [];
+        var data3 = [];
+        var temp = [];
+        var years = [];
+        var jsonObjArray = [
+            {
+                "Vrsta prihoda": "Porez i prirez na dohodak od nesamostalnog rada", "2009": 68246588, "2010": 59021591, "2011": 58081342,
+                "2012": 62548883, "2013": 63166510, "2014": 61277939, "2015": 54964305, "2016": 57505606, "2017": 54340681, "2018": 71288848
+            },
+
+            {
+                "Vrsta prihoda": "Prihodi od poreza", "2009": 21480804, "2010": 17002802, "2011": 20081342,
+                "2012": 18548883, "2013": 23215167, "2014": 22046165, "2015": 22490152, "2016": 22941095, "2017": 21744225, "2018": 19552467
+            },
+
+            {
+                "Vrsta prihoda": "Porez i prirez na dohodak", "2009": 58246588, "2010": 59021591, "2011": 61081342,
+                "2012": 60548883, "2013": 62166510, "2014": 60277939, "2015": 55964305, "2016": 58505606, "2017": 55340681, "2018": 71288848
+            }];
+
+        for (var item in jsonObjArray[0]) {
+            if (typeof jsonObjArray[0][item] == "number") {
+                data1.push(jsonObjArray[0][item] / 1000000);
+                years.push(item);
+            }
+        }
+        for (var item in jsonObjArray[1]) {
+            if (typeof jsonObjArray[0][item] == "number") {
+                data2.push(jsonObjArray[1][item] / 1000000);
+            }
+        }
+        for (var item in jsonObjArray[2]) {
+            if (typeof jsonObjArray[0][item] == "number") {
+                data3.push(jsonObjArray[2][item] / 1000000);
+            }
+        }
+
+        var margin = { top: 20, bottom: 70, left: 50, right: 20 };
+        var width = 600 - margin.left - margin.right;
+        var height = 500 - margin.top - margin.bottom;
+        var barPadding = 4;
+        var barWidth = width / data1.length - barPadding;
+
+        var x = d3.scale.ordinal()
+            .domain(d3.range(data1.length))
+            .rangePoints([0, width]);
+        var y = d3.scale.linear()
+            .domain([0, d3.max(data1)])
+            .range([height, 0]);
+        var xAxis = d3.svg.axis()
+            .scale(x)
+            .orient("bottom")
+            .tickFormat(function (d, i) { return years[i]; });
+        var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient("left")
+            .ticks(10);
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.bottom + margin.top)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis)
+            .selectAll("text")
+            .style("text-anchor", "middle");
+        svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxis)
+            .append("text")
+            .attr("transform", "rotate(-90)")
+
+        svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("x", 0 - (height / 2))
+            .attr("y", 0 - margin.left)
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text("Prihod(mil.)");
+        svg.append("text")
+            .attr("x", (width / 2))
+            .attr("y", (height + (margin.bottom / 2)))
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text("Godina");
+        var valueline = d3.svg.line()
+            
+            .x(function (d, i) { return x(i); })
+            .y(function (d) { return y(d); });
+        var linechart = svg.append("path")
+            .attr("class", "line")
+            .attr("d", valueline(data1))
+            .style("stroke", "red")
+            .attr("fill", "none");
+        var linechart = svg.append("path")
+            .attr("class", "line")
+            .attr("d", valueline(data2))
+            .style("stroke", "green")
+            .attr("fill", "none");
+        var linechart = svg.append("path")
+            .attr("class", "line")
+            .attr("d", valueline(data3))
+            .style("stroke", "black")
+            .attr("fill", "none");
+
+
+    </script>
+</body>
+
+</html>

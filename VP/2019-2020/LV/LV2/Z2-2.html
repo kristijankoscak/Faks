@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 2</title>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        var data = []
+        var jsonObjArray = [{
+            "Vrsta prihoda": "Porez i prirez na dohodak od nesamostalnog rada", "2009": 68246588, "2010": 59021591, "2011": 58081342,
+            "2012": 62548883, "2013": 63166510, "2014": 61277939, "2015": 54964305, "2016": 57505606, "2017": 54340681, "2018": 71288848
+        }];
+        for(var jsO in jsonObjArray){
+            for(var item in jsonObjArray[jsO])
+            if(typeof jsonObjArray[jsO][item] == "number")
+                data.push(jsonObjArray[jsO][item]/1000000);
+        }
+        console.log(data);
+
+        //var data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        
+        var width = 500;
+        var height = 100;
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+        var barchart = svg.selectAll("rect")
+            .data(data)
+            .enter()
+            .append("rect")
+            .attr("x", function (d, i) { return 50 * i; })
+            .attr("y", function (d) { return height - d ; })
+            .attr("width", 40)
+            .attr("height", function (d) { return d ; })
+            .attr("fill", "blue");
+
+    </script>
+</body>
+
+</html>

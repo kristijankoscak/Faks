@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 1</title>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        d3.select("body")
+            .append("h1")
+            .html("Naslov dokumenta");
+
+        d3.select("body")
+            .append("div");
+        d3.select("body")
+            .append("div");
+
+        d3.selectAll("div")
+            .append("h2")
+            .html(function (d, i) { return "Podnaslov " + (i + 1); });
+        d3.selectAll("div")
+            .append("p")
+            .html(function (d, i) { return "Tekst " + (i + 1) + "."; })
+
+    </script>
+</body>
+
+</html>

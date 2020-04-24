@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 1</title>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        var width = 600;
+        var height = 600;
+        var outerRadius = 200;
+        var innerRadius = 150;
+
+        var color = d3.scale.category20();
+
+        var arc = d3.svg.arc()
+            .innerRadius(innerRadius)
+            .outerRadius(outerRadius);
+
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+        var data =
+            [
+                { name: "jabuka", value: 3 },
+                { name: 'kruska', value: 4 },
+                { name: 'banana', value: 83 },
+                { name: 'jagoda', value: 47 },
+                { name: 'ribizla', value: 5 }
+            ];
+        var pie = d3.layout.pie()
+            .value(function (d) { return d.value; });
+        pie(data);
+
+        var pieArcs = svg.selectAll("g.pie")
+            .data(pie(data))
+            .enter()
+            .append("g")
+            .attr("class", "pie")
+            .attr("transform", "translate(" + (width / 2) + ", " + (height / 2) + ")");
+
+        pieArcs.append("path")
+            .attr("fill", function (d, i) { return color(i); })
+            .attr("d", arc);
+
+        pieArcs.append("text")
+            .attr("transform", function (d) {
+                return "translate(" + arc.centroid(d) + ") ";
+            })
+            .attr("text-anchor", "middle")
+            .text(function (d, i) { return d.value; });
+
+        pieArcs.append("text")
+            .attr("transform", function (d) {
+                var center = arc.centroid(d);
+                return "translate(" + center[0] * 1.3 + "," + center[1] * 1.3 + ") rotate(-45)";
+            })
+            .text(function (d, i) { return data[i].name; });
+        
+        svg.selectAll("path").on("mouseover", function (d,i) { console.log("vrsta: "+data[i].name + " ,kolicina: " +d.value);});
+        
+    </script>
+</body>
+
+</html>

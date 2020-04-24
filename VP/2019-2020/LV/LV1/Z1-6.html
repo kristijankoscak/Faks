@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 6</title>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", "1000")
+            .attr("height", "500")
+        svg.append("rect")
+            .attr("x", "0")
+            .attr("y", "300")
+            .attr("width", "1000")
+            .attr("height", "200")
+            .attr("style", "fill:green;opacity:0.7;");
+        svg.append("rect")
+            .attr("x", "0")
+            .attr("y", "0")
+            .attr("width", "1000")
+            .attr("height", "300")
+            .attr("style", "fill:lightblue;opacity:0.5;");
+        svg.append("rect")
+            .attr("x", "50")
+            .attr("y", "200")
+            .attr("width", "400")
+            .attr("height", "200")
+            .attr("style", "fill:orange;");
+        svg.append("rect")
+            .attr("x", "100")
+            .attr("y", "250")
+            .attr("width", "50")
+            .attr("height", "50")
+            .attr("style", "stroke:brown;fill:lightblue;stroke-width:3px;");
+        svg.append("rect")
+            .attr("x", "350")
+            .attr("y", "250")
+            .attr("width", "50")
+            .attr("height", "50")
+            .attr("style", "stroke:brown;fill:lightblue;stroke-width:3px;");
+        svg.append("rect")
+            .attr("x", "215")
+            .attr("y", "250")
+            .attr("width", "70")
+            .attr("height", "150")
+            .attr("style", "fill:brown;opacity:0.8;");
+        svg.append("ellipse")
+            .attr("cx", "500")
+            .attr("cy", "80")
+            .attr("rx", "80")
+            .attr("ry", "40")
+            .attr("style", "fill:white;");
+        svg.append("circle")
+            .attr("cx", "600")
+            .attr("cy", "100")
+            .attr("r", "80")
+            .attr("style", "fill:yellow;");
+        svg.append("rect")
+            .attr("x", "850")
+            .attr("y", "200")
+            .attr("width", "30")
+            .attr("height", "150")
+            .attr("style", "fill:brown;opacity:1;");
+        svg.append("ellipse")
+            .attr("cx", "890")
+            .attr("cy", "100")
+            .attr("rx", "100")
+            .attr("ry", "50")
+            .attr("style", "fill:white;");
+        svg.append("ellipse")
+            .attr("cx", "865")
+            .attr("cy", "150")
+            .attr("rx", "50")
+            .attr("ry", "100")
+            .attr("style", "fill:green;");
+        svg.append("ellipse")
+            .attr("cx", "80")
+            .attr("cy", "70")
+            .attr("rx", "70")
+            .attr("ry", "35")
+            .attr("style", "fill:white;");
+        svg.append("polygon")
+            .attr("points", "50,200,450,200,250,25")
+            .attr("style", "fill:red;");
+        svg.append("line")
+            .attr("x1", "250")
+            .attr("y1", "25")
+            .attr("x2", "20")
+            .attr("y2", "230")
+            .attr("style", "fill:brown;stroke:brown;stroke-width:5px");
+        svg.append("line")
+            .attr("x1", "250") 
+            .attr("y1", "25")
+            .attr("x2", "480")
+            .attr("y2", "230")
+            .attr("style", "fill:brown;stroke:brown;stroke-width:5px");
+
+
+    </script>
+</body>
+
+</html>

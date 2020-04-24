@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 1</title>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", 500)
+            .attr("height", 500)
+            .style("background-color", "#69b3a2");
+
+        var distance = [110, 220, 330];
+        var colors = ["gray", "lightblue", "blue"];
+
+        svg.selectAll("rect")
+            .data(distance)
+            .enter()
+            .append("rect")
+            .attr("x", function (d, i) {
+                return 0 + distance[i] - 30;
+            })
+            .attr("y", svg.attr("height") - 200)
+            .attr("width", 60)
+            .attr("height", 200)
+            .attr("fill", function (d, i) { return colors[i] })
+            .style("stroke", "black");
+
+        svg.selectAll("circle")
+            .data(distance)
+            .enter()
+            .append("circle")
+            .attr("cx", function (d, i) {
+                return 0 + distance[i];
+            })
+            .attr("cy", 50)
+            .attr("r", 30)
+            .attr("fill", "orange")
+            .style("stroke", "black");
+
+
+        var circles = d3.selectAll("circle");
+        d3.select(circles[0][0])
+            .transition()
+            .duration(1500)
+            .ease("linear")
+            .attr("transform", function (d) {
+                return "translate(0,220)";
+            });
+        d3.select(circles[0][1])
+            .transition()
+            .duration(3000)
+            .ease("bounce")
+            .attr("transform", function (d) {
+                return "translate(0,220)";
+            });
+        d3.select(circles[0][2])
+            .transition()
+            .duration(1500)
+            .ease("linear")
+            .attr("transform", function (d) {
+                return "translate(0,240)";
+            })
+            .transition()
+            .delay(1500)
+            .duration(2500)
+            .attr("transform", function (d) {
+                return "translate(0,420)";
+            });
+
+    </script>
+</body>
+
+</html>

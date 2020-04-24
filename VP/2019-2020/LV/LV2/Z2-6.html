@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 6</title>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        var data = [
+            { timeSpentAtComp: new Date(2020, 2, 29), value: 10 },
+            { timeSpentAtComp: new Date(2020, 2, 30), value: 12 },
+            { timeSpentAtComp: new Date(2020, 2, 31), value: 9 },
+            { timeSpentAtComp: new Date(2020, 3, 1), value: 10 },
+            { timeSpentAtComp: new Date(2020, 3, 2), value: 12 }
+
+        ];
+        var width = 600;
+        var height = 400;
+
+        var margin = { top: 20, bottom: 70, left: 50, right: 30 };
+        var width = 700 - margin.left - margin.right;
+        var height = 500 - margin.top - margin.bottom;
+        var barPadding = 5;
+
+
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.bottom + margin.top)
+            .style("background-color", "lightblue")
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        var minDate = d3.min(data, function (d) { return d.timeSpentAtComp; });
+        var maxDate = d3.max(data, function (d) { return d.timeSpentAtComp; });
+
+        var xScale = d3.time.scale()
+            .domain([minDate, maxDate])
+            .range([barPadding, width - barPadding]);
+
+        var yScale = d3.scale.linear()
+            .domain([0, d3.max(data, function (d) { return d.value; })])
+            .range([height - barPadding, barPadding]);
+
+        var format = d3.time.format("%e %B");
+
+        var xAxis = d3.svg.axis()
+            .scale(xScale)
+            .orient("bottom")
+            .tickFormat(format)
+            .ticks(3);
+
+        svg.append("g")
+            .attr("class", "axis x-axis")
+            .attr("transform", "translate(0," + (height - barPadding) + ")")
+            .call(xAxis);
+
+        var yAxis = d3.svg.axis()
+            .scale(yScale)
+            .orient("left")
+            .tickFormat(function (d) { return d; })
+            .ticks(10);
+
+        svg.append("g")
+            .attr("class", "axis y-axis")
+            .attr("transform", "translate(" + barPadding + ",0)")
+            .call(yAxis);
+
+        var valueline = d3.svg.line()
+            .x(function (d) {
+                return xScale(d.timeSpentAtComp);
+            })
+            .y(function (d) {
+                return yScale(d.value);
+            });
+
+        var linechart = svg.append("path")
+            .attr("class", "line")
+            .attr("d", valueline(data))
+            .style("stroke", "green")
+            .attr("fill", "none");
+
+        svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("x", 0 - (height / 2))
+            .attr("y", 0 - margin.left)
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text("Sati provedeni za racunalom");
+        svg.append("text")
+            .attr("x", (width / 2))
+            .attr("y", (height + (margin.bottom / 2)))
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text("Datum");
+
+    </script>
+</body>
+
+</html>

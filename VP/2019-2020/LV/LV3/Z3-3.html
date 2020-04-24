@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 1</title>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", 400)
+            .attr("height", 400)
+            .style("background-color", "#69b3a2");
+
+        var rects = svg.append("rect")
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("width", 100)
+            .attr("height", 200)
+            .style("fill", "lightblue");
+
+        d3.select("rect")
+            .transition()
+            .delay(250)
+            .duration(1000)
+            .attr("transform", function (d) { return "translate(" + (svg.attr("width") - rects.attr("width")) + ")"; })
+            .transition()
+            .duration(1000)
+            .attr("transform", function (d) { return "translate("+(svg.attr("width") - rects.attr("width"))+","+ (svg.attr("height") - rects.attr("height")) + ")"; });
+
+
+    </script>
+</body>
+
+</html>
