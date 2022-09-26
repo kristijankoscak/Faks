@@ -1,0 +1,7 @@
+INFILE=F:\DRS\koscak\LV2_koscak\EDK\implementation\system.ncd
+OUTFILE=F:\DRS\koscak\LV2_koscak\EDK\implementation\system.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=F:\DRS\koscak\LV2_koscak\EDK\implementation
+LICENSE=ISE
+USER_INFO=210968192_1777509436_210669687_605

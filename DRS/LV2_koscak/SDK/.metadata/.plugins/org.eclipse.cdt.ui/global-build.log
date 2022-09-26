@@ -1,0 +1,3023 @@
+18:35:05 **** Build of project lv2_app_bsp ****
+make -k all 
+libgen -hw ../EDK_hw_platform/system.xml\
+	       -lp F:/DRS/ana/EDK\
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../EDK_hw_platform/system.xml -lp F:/DRS/ana/EDK -pe
+microblaze_0 -log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare
+-mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections
+-fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare
+-mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections
+-fdata-sections"'.
+"Compiling common"
+"Compiling standalone";
+"Compiling tmrctr"
+"Compiling gpio"
+"Compiling bram"
+"Compiling intc"
+"Compiling uartlite"
+"Compiling cpu"
+Running execs_generate.
+'Finished building libraries'
+18:35:26 **** Build of configuration Debug for project lv2_app ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: lv2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv2_app.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv2_app.elf  |tee "lv2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   2174	    268	   2084	   4526	   11ae	lv2_app.elf
+'Finished building: lv2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv2_app.elf 
+
+ELF file	: lv2_app.elf
+elfcheck passed.
+'Finished building: lv2_app.elf.elfcheck'
+' '
+18:35:59 **** Clean-only build of configuration Debug for project lv2_app ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  lv2_app.elf.size  lv2_app.elf.elfcheck  lv2_app.elf
+' '
+18:35:59 **** Auto Build of configuration Debug for project lv2_app ****
+make all 
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: lv2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv2_app.elf"  ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/crtinit.o: In function `_crtinit':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/crtinit.S:69: undefined reference to `main'
+collect2: ld returned 1 exit status
+make: *** [lv2_app.elf] Greška 1
+18:37:56 **** Build of project lv_2_app_bsp ****
+make -k all 
+libgen -hw ../EDK_hw_platform/system.xml\
+	       -lp F:/DRS/ana/EDK\
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../EDK_hw_platform/system.xml -lp F:/DRS/ana/EDK -pe
+microblaze_0 -log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare
+-mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections
+-fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare
+-mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections
+-fdata-sections"'.
+"Compiling common"
+"Compiling standalone";
+"Compiling tmrctr"
+"Compiling gpio"
+"Compiling bram"
+"Compiling intc"
+"Compiling uartlite"
+"Compiling cpu"
+Running execs_generate.
+'Finished building libraries'
+18:38:16 **** Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/crtinit.o: In function `_crtinit':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/crtinit.S:69: undefined reference to `main'
+collect2: ld returned 1 exit status
+make: *** [lv_2_app.elf] Greška 1
+18:39:45 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:57:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:57:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:58:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:61:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:222:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:222:62: error: 'uCount' undeclared (first use in this function)
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+18:39:48 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:221:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:221:62: error: 'uCount' undeclared (first use in this function)
+../src/main.c:203:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+18:50:18 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:221:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:221:62: error: 'uCount' undeclared (first use in this function)
+../src/main.c:203:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+18:52:21 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:39:10: warning: type defaults to 'int' in declaration of 'TimeExpired' [-Wimplicit-int]
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:221:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:221:62: error: 'uCount' undeclared (first use in this function)
+../src/main.c:203:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+18:52:34 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:221:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:221:62: error: 'uCount' undeclared (first use in this function)
+../src/main.c:203:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+18:55:36 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:221:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:221:62: error: 'uCount' undeclared (first use in this function)
+../src/main.c:203:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+18:59:07 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:221:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:221:62: error: 'uCount' undeclared (first use in this function)
+../src/main.c:203:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:00:45 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:223:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:223:62: error: 'uCount' undeclared (first use in this function)
+../src/main.c:205:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:06:34 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:223:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:223:62: error: 'uCount' undeclared (first use in this function)
+../src/main.c:205:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:09:50 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TmrCtrIntrInit':
+../src/main.c:123:51: error: expected expression before ')' token
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:223:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:223:62: error: 'uCount' undeclared (first use in this function)
+../src/main.c:205:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:26:00 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TmrCtrIntrInit':
+../src/main.c:158:38: error: expected expression before ')' token
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:222:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:222:62: error: 'uCount' undeclared (first use in this function)
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:29:56 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:222:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:222:62: error: 'uCount' undeclared (first use in this function)
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:38:29 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:222:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:222:62: error: 'uCount' undeclared (first use in this function)
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:39:10 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TmrCtrIntrInit':
+../src/main.c:184:5: error: unknown type name 'XtmrCtr_'
+../src/main.c:188:11: error: expected declaration specifiers or '...' before string constant
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:222:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:222:62: error: 'uCount' undeclared (first use in this function)
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:40:21 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:16:1: warning: data definition has no type or storage class [enabled by default]
+../src/main.c:16:1: warning: type defaults to 'int' in declaration of 'RESET_VALUE' [-Wimplicit-int]
+../src/main.c:16:15: error: expected expression before ';' token
+../src/main.c: In function 'main':
+../src/main.c:56:5: warning: implicit declaration of function 'TmrCtrIntrInit' [-Wimplicit-function-declaration]
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: At top level:
+../src/main.c:96:5: error: conflicting types for 'TmrCtrIntrInit'
+../src/main.c:102:1: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+../src/main.c:56:14: note: previous implicit declaration of 'TmrCtrIntrInit' was here
+../src/main.c: In function 'TmrCtrIntrInit':
+../src/main.c:184:57: error: expected expression before ')' token
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:222:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:222:62: error: 'uCount' undeclared (first use in this function)
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:40:41 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:16:19: error: expected expression before ';' token
+../src/main.c: In function 'main':
+../src/main.c:56:5: warning: implicit declaration of function 'TmrCtrIntrInit' [-Wimplicit-function-declaration]
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: At top level:
+../src/main.c:96:5: error: conflicting types for 'TmrCtrIntrInit'
+../src/main.c:102:1: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+../src/main.c:56:14: note: previous implicit declaration of 'TmrCtrIntrInit' was here
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:222:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:222:62: error: 'uCount' undeclared (first use in this function)
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:41:01 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:16:19: error: expected expression before ';' token
+../src/main.c: In function 'main':
+../src/main.c:56:5: warning: implicit declaration of function 'TmrCtrIntrInit' [-Wimplicit-function-declaration]
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: At top level:
+../src/main.c:96:5: error: conflicting types for 'TmrCtrIntrInit'
+../src/main.c:102:1: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+../src/main.c:56:14: note: previous implicit declaration of 'TmrCtrIntrInit' was here
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:41:07 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:16:19: error: expected expression before ';' token
+../src/main.c: In function 'main':
+../src/main.c:56:5: warning: implicit declaration of function 'TmrCtrIntrInit' [-Wimplicit-function-declaration]
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: At top level:
+../src/main.c:96:5: error: conflicting types for 'TmrCtrIntrInit'
+../src/main.c:102:1: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+../src/main.c:56:14: note: previous implicit declaration of 'TmrCtrIntrInit' was here
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:42:13 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:16:19: error: expected expression before ';' token
+../src/main.c: In function 'main':
+../src/main.c:56:5: warning: implicit declaration of function 'TmrCtrIntrInit' [-Wimplicit-function-declaration]
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: At top level:
+../src/main.c:96:5: error: conflicting types for 'TmrCtrIntrInit'
+../src/main.c:102:1: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+../src/main.c:56:14: note: previous implicit declaration of 'TmrCtrIntrInit' was here
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:43:06 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:16:19: error: expected expression before ';' token
+../src/main.c: In function 'main':
+../src/main.c:56:5: warning: implicit declaration of function 'TmrCtrIntrInit' [-Wimplicit-function-declaration]
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: At top level:
+../src/main.c:96:5: error: conflicting types for 'TmrCtrIntrInit'
+../src/main.c:102:1: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+../src/main.c:56:14: note: previous implicit declaration of 'TmrCtrIntrInit' was here
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:43:49 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:16:19: error: expected expression before ';' token
+../src/main.c: In function 'main':
+../src/main.c:56:5: warning: implicit declaration of function 'TmrCtrIntrInit' [-Wimplicit-function-declaration]
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: At top level:
+../src/main.c:96:5: error: conflicting types for 'TmrCtrIntrInit'
+../src/main.c:102:1: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+../src/main.c:56:14: note: previous implicit declaration of 'TmrCtrIntrInit' was here
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:44:35 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:16:19: error: expected expression before ';' token
+../src/main.c: In function 'main':
+../src/main.c:56:5: warning: implicit declaration of function 'TmrCtrIntrInit' [-Wimplicit-function-declaration]
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: At top level:
+../src/main.c:96:5: error: conflicting types for 'TmrCtrIntrInit'
+../src/main.c:102:1: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+../src/main.c:56:14: note: previous implicit declaration of 'TmrCtrIntrInit' was here
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:46:01 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:16:19: error: expected expression before ';' token
+../src/main.c: In function 'main':
+../src/main.c:56:5: warning: implicit declaration of function 'TmrCtrIntrInit' [-Wimplicit-function-declaration]
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: At top level:
+../src/main.c:96:5: error: conflicting types for 'TmrCtrIntrInit'
+../src/main.c:102:1: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+../src/main.c:56:14: note: previous implicit declaration of 'TmrCtrIntrInit' was here
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:47:35 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:16:20: error: 'TIMING_INTERVAL' undeclared here (not in a function)
+../src/main.c:16:39: error: 'TLRx' undeclared here (not in a function)
+../src/main.c:16:49: error: expected ',' or ';' before 'x'
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:47:54 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:16:20: error: 'TIMING_INTERVAL' undeclared here (not in a function)
+../src/main.c:16:39: error: 'TLRx' undeclared here (not in a function)
+../src/main.c:16:49: error: expected ',' or ';' before 'x'
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:48:02 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:16:1: error: unknown type name 'U32'
+../src/main.c:16:20: error: 'TIMING_INTERVAL' undeclared here (not in a function)
+../src/main.c:16:39: error: 'TLRx' undeclared here (not in a function)
+../src/main.c:16:49: error: expected ',' or ';' before 'x'
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:48:05 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:16:20: error: 'TIMING_INTERVAL' undeclared here (not in a function)
+../src/main.c:16:39: error: 'TLRx' undeclared here (not in a function)
+../src/main.c:16:49: error: expected ',' or ';' before 'x'
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:48:17 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:16:21: error: 'TLRx' undeclared here (not in a function)
+../src/main.c:16:31: error: expected ',' or ';' before 'x'
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:48:30 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:16:21: error: 'TLRx' undeclared here (not in a function)
+../src/main.c:16:31: error: expected ',' or ';' before 'x'
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:48:45 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:16:21: error: 'TLRx' undeclared here (not in a function)
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:52:42 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:56:30: error: 'InterruptController' undeclared (first use in this function)
+../src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:56:17 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:57:30: error: 'TimerCounterInst' undeclared (first use in this function)
+../src/main.c:57:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+19:56:59 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c:60:29: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+20:01:36 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:60:29: error: 'XPAR_INTC_0_TMRCTR_0_VEC_ID' undeclared (first use in this function)
+../src/main.c:60:29: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+make: *** [src/main.o] Greška 1
+20:13:07 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+../src/main.c:224:15: warning: 'timeMS' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10164	    380	   2296	  12840	   3228	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+20:14:47 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+20:15:41 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+20:15:41 **** Clean-only build of configuration Debug for project lv_2_app ****
+make clean 
+rm -rf  ./src/main.o  ./src/main.d  lv_2_app.elf.size  lv_2_app.elf.elfcheck  lv_2_app.elf
+' '
+20:15:42 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+../src/main.c:224:15: warning: 'timeMS' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10164	    380	   2296	  12840	   3228	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+20:17:17 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10192	    380	   2292	  12864	   3240	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+20:17:29 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+20:18:15 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10348	    380	   2296	  13024	   32e0	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+20:18:29 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+20:19:54 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+20:21:24 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+20:24:44 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:224:13: warning: unknown escape sequence: '\040' [enabled by default]
+../src/main.c:209:7: warning: variable 'uCount' set but not used [-Wunused-but-set-variable]
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10336	    380	   2292	  13008	   32d0	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+20:25:10 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:225:13: warning: unknown escape sequence: '\040' [enabled by default]
+../src/main.c:209:7: warning: variable 'uCount' set but not used [-Wunused-but-set-variable]
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10180	    380	   2296	  12856	   3238	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+20:25:19 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:225:13: warning: unknown escape sequence: '\040' [enabled by default]
+../src/main.c:226:13: warning: unknown escape sequence: '\040' [enabled by default]
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10204	    380	   2296	  12880	   3250	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+20:25:32 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10204	    380	   2296	  12880	   3250	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+20:26:37 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+20:26:57 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:208:6: warning: unused variable 'timeMS' [-Wunused-variable]
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10152	    380	   2292	  12824	   3218	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+20:28:04 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+20:29:53 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+20:37:10 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+20:49:44 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+20:50:23 **** Clean-only build of configuration Debug for project lv_2_app ****
+make clean 
+rm -rf  ./src/main.o  ./src/main.d  lv_2_app.elf.size  lv_2_app.elf.elfcheck  lv_2_app.elf
+' '
+20:50:23 **** Clean-only build of project lv_2_app_bsp ****
+make -k clean 
+rm -rf microblaze_0
+20:50:24 **** Build of project lv_2_app_bsp ****
+make -k all 
+libgen -hw ../EDK_hw_platform/system.xml\
+	       -lp F:/DRS/ana/EDK\
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../EDK_hw_platform/system.xml -lp F:/DRS/ana/EDK -pe
+microblaze_0 -log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare
+-mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections
+-fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare
+-mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections
+-fdata-sections"'.
+"Compiling common"
+"Compiling standalone";
+"Compiling tmrctr"
+"Compiling gpio"
+"Compiling bram"
+"Compiling intc"
+"Compiling uartlite"
+"Compiling cpu"
+Running execs_generate.
+'Finished building libraries'
+20:50:42 **** Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:208:6: warning: unused variable 'timeMS' [-Wunused-variable]
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10204	    388	   2296	  12888	   3258	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+20:50:50 **** Clean-only build of configuration Debug for project lv_2_app ****
+make clean 
+rm -rf  ./src/main.o  ./src/main.d  lv_2_app.elf.size  lv_2_app.elf.elfcheck  lv_2_app.elf
+' '
+
+****  of configuration Debug for project lv_2_app ****
+
+Nothing to build for project lv_2_app
+20:51:06 **** Clean-only build of configuration Debug for project lv_2_app ****
+make clean 
+rm -rf  ./src/main.o  ./src/main.d  lv_2_app.elf.size  lv_2_app.elf.elfcheck  lv_2_app.elf
+' '
+20:51:06 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/crtinit.o: In function `_crtinit':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/crtinit.S:69: undefined reference to `main'
+collect2: ld returned 1 exit status
+make: *** [lv_2_app.elf] Greška 1
+20:51:30 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'main':
+../src/main2.c:47:32: error: 'Gpio' undeclared (first use in this function)
+../src/main2.c:47:32: note: each undeclared identifier is reported only once for each function it appears in
+../src/main2.c:52:28: error: 'Intc' undeclared (first use in this function)
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:158:68: error: 'IntrCnt' undeclared (first use in this function)
+../src/main2.c:137:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+make: *** [src/main2.o] Greška 1
+20:52:23 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c:28:1: error: unknown type name 'Intc'
+../src/main2.c: In function 'main':
+../src/main2.c:53:5: warning: passing argument 1 of 'GpioIntrInit' from incompatible pointer type [enabled by default]
+../src/main2.c:21:5: note: expected 'struct XIntc *' but argument is of type 'int *'
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:159:68: error: 'IntrCnt' undeclared (first use in this function)
+../src/main2.c:159:68: note: each undeclared identifier is reported only once for each function it appears in
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+make: *** [src/main2.o] Greška 1
+20:52:35 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c:28:1: error: unknown type name 'Intc'
+../src/main2.c: In function 'main':
+../src/main2.c:53:28: error: 'Intc' undeclared (first use in this function)
+../src/main2.c:53:28: note: each undeclared identifier is reported only once for each function it appears in
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:159:68: error: 'IntrCnt' undeclared (first use in this function)
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+make: *** [src/main2.o] Greška 1
+20:52:44 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c:28:1: error: unknown type name 'Intc'
+../src/main2.c: In function 'main':
+../src/main2.c:53:5: warning: passing argument 1 of 'GpioIntrInit' from incompatible pointer type [enabled by default]
+../src/main2.c:21:5: note: expected 'struct XIntc *' but argument is of type 'int *'
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:159:68: error: 'IntrCnt' undeclared (first use in this function)
+../src/main2.c:159:68: note: each undeclared identifier is reported only once for each function it appears in
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+make: *** [src/main2.o] Greška 1
+20:54:12 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c:38:1: error: unknown type name 'IntrCnt'
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:159:68: error: 'IntrCnt' undeclared (first use in this function)
+../src/main2.c:159:68: note: each undeclared identifier is reported only once for each function it appears in
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+make: *** [src/main2.o] Greška 1
+20:54:22 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:159:68: error: 'IntrCnt' undeclared (first use in this function)
+../src/main2.c:159:68: note: each undeclared identifier is reported only once for each function it appears in
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+make: *** [src/main2.o] Greška 1
+20:54:52 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+../src/main2.c:159:15: warning: 'pushValue' is used uninitialized in this function [-Wuninitialized]
+../src/main2.c: In function 'GpioIntrInit':
+../src/main2.c:90:8: warning: 'Status' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   6622	    372	   2140	   9134	   23ae	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+20:58:07 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+make: Ništa za napraviti za `all'.
+21:00:23 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioIntrInit':
+../src/main2.c:88:5: error: too few arguments to function 'XIntc_Initialize'
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:302:5: note: declared here
+../src/main2.c:90:5: error: expected ';' before 'if'
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+make: *** [src/main2.o] Greška 1
+21:00:50 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+../src/main2.c:159:15: warning: 'pushValue' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   7158	    372	   2268	   9798	   2646	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:03:33 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioIntrInit':
+../src/main2.c:101:34: error: expected expression before ')' token
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+make: *** [src/main2.o] Greška 1
+21:06:15 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+../src/main2.c:159:15: warning: 'pushValue' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   7406	    372	   2268	  10046	   273e	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:07:21 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+../src/main2.c:159:15: warning: 'pushValue' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   7666	    372	   2274	  10312	   2848	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:13:15 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:143:28: error: 'InstancePtr' undeclared (first use in this function)
+../src/main2.c:143:28: note: each undeclared identifier is reported only once for each function it appears in
+../src/main2.c:143:40: error: 'IntrMask' undeclared (first use in this function)
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+make: *** [src/main2.o] Greška 1
+21:14:00 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:143:28: error: 'InstancePtr' undeclared (first use in this function)
+../src/main2.c:143:28: note: each undeclared identifier is reported only once for each function it appears in
+../src/main2.c:143:40: error: 'IntrMask' undeclared (first use in this function)
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+make: *** [src/main2.o] Greška 1
+21:18:48 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:151:36: error: 'InstancePtr' undeclared (first use in this function)
+../src/main2.c:151:36: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/main2.o] Greška 1
+21:19:28 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   8410	    372	   2274	  11056	   2b30	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:19:35 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   8410	    372	   2274	  11056	   2b30	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:20:48 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   8430	    372	   2268	  11070	   2b3e	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:25:02 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+../src/main2.c:174:1: error: expected ';' before '}' token
+make: *** [src/main2.o] Greška 1
+21:25:03 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   8470	    372	   2268	  11110	   2b66	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:26:17 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   8470	    372	   2268	  11110	   2b66	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:26:26 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   8470	    372	   2268	  11110	   2b66	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:27:50 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   8694	    372	   2268	  11334	   2c46	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:29:27 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   8694	    372	   2268	  11334	   2c46	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:30:47 **** Clean-only build of configuration Debug for project lv_2_app ****
+make clean 
+rm -rf  ./src/main2.o  ./src/main2.d  lv_2_app.elf.size  lv_2_app.elf.elfcheck  lv_2_app.elf
+' '
+21:30:48 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:208:6: warning: unused variable 'timeMS' [-Wunused-variable]
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/main2.o: In function `main':
+F:\DRS\koscak\LV2_koscak\SDK\lv_2_app\Debug/../src/main2.c:43: multiple definition of `main'
+./src/main.o:F:\DRS\koscak\LV2_koscak\SDK\lv_2_app\Debug/../src/main.c:43: first defined here
+collect2: ld returned 1 exit status
+make: *** [lv_2_app.elf] Greška 1
+21:30:53 **** Clean-only build of configuration Debug for project lv_2_app ****
+make clean 
+rm -rf  ./src/main.o ./src/main2.o  ./src/main.d ./src/main2.d  lv_2_app.elf.size  lv_2_app.elf.elfcheck  lv_2_app.elf
+' '
+21:30:53 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:208:6: warning: unused variable 'timeMS' [-Wunused-variable]
+../src/main.c:204:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10204	    388	   2296	  12888	   3258	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:31:44 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:209:6: warning: unused variable 'timeMS' [-Wunused-variable]
+../src/main.c:205:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10204	    388	   2296	  12888	   3258	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:31:54 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+21:32:56 **** Clean-only build of configuration Debug for project lv_2_app ****
+make clean 
+rm -rf  ./src/main.o  ./src/main.d  lv_2_app.elf.size  lv_2_app.elf.elfcheck  lv_2_app.elf
+' '
+
+****  of configuration Debug for project lv_2_app ****
+
+Nothing to build for project lv_2_app
+21:32:59 **** Clean-only build of configuration Debug for project lv_2_app ****
+make clean 
+rm -rf  ./src/main.o  ./src/main.d  lv_2_app.elf.size  lv_2_app.elf.elfcheck  lv_2_app.elf
+' '
+21:33:00 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   8694	    372	   2268	  11334	   2c46	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:39:15 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   8702	    372	   2268	  11342	   2c4e	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:41:19 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   8922	    372	   2274	  11568	   2d30	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:43:33 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:144:5: warning: passing argument 1 of 'XIntc_Disable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:312:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9174	    372	   2268	  11814	   2e26	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:45:50 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:144:5: warning: passing argument 1 of 'XIntc_Disable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:312:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9174	    372	   2268	  11814	   2e26	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:46:51 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:144:5: warning: passing argument 1 of 'XIntc_Disable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:312:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9174	    372	   2268	  11814	   2e26	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+21:47:15 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+22:01:58 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:144:5: warning: passing argument 1 of 'XIntc_Disable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:312:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9174	    372	   2268	  11814	   2e26	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:02:13 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:144:5: warning: passing argument 1 of 'XIntc_Disable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:312:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9174	    372	   2268	  11814	   2e26	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:03:50 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:144:5: warning: passing argument 1 of 'XIntc_Disable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:312:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9174	    372	   2268	  11814	   2e26	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:04:04 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+22:05:10 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:144:5: warning: passing argument 1 of 'XIntc_Disable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:312:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9174	    372	   2268	  11814	   2e26	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:05:41 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:144:5: warning: passing argument 1 of 'XIntc_Disable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:312:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9186	    372	   2274	  11832	   2e38	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:05:50 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:144:5: warning: passing argument 1 of 'XIntc_Disable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:312:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9174	    372	   2268	  11814	   2e26	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:07:07 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:144:5: warning: passing argument 1 of 'XIntc_Disable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:312:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+../src/main2.c:167:5: warning: passing argument 1 of 'XIntc_Enable' from incompatible pointer type [enabled by default]
+../../lv_2_app_bsp/microblaze_0/include/xintc.h:311:6: note: expected 'struct XIntc *' but argument is of type 'struct XGpio *'
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9178	    372	   2274	  11824	   2e30	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:07:40 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9182	    372	   2268	  11822	   2e2e	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:07:52 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+22:08:20 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+22:09:15 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9198	    372	   2268	  11838	   2e3e	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:09:56 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+22:10:59 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+22:19:51 **** Clean-only build of configuration Debug for project lv_2_app ****
+make clean 
+rm -rf  ./src/main2.o  ./src/main2.d  lv_2_app.elf.size  lv_2_app.elf.elfcheck  lv_2_app.elf
+' '
+22:19:51 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:156:5: error: 'IntrCnt' undeclared (first use in this function)
+../src/main2.c:156:5: note: each undeclared identifier is reported only once for each function it appears in
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+make: *** [src/main2.o] Greška 1
+22:20:01 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9198	    372	   2268	  11838	   2e3e	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:21:12 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:138:12: warning: unused variable 'GpioPtr' [-Wunused-variable]
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9198	    372	   2268	  11838	   2e3e	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:22:27 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9194	    372	   2274	  11840	   2e40	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:23:02 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+../src/main2.c: In function 'GpioHandler':
+../src/main2.c:144:25: error: 'IntcInstancePtr' undeclared (first use in this function)
+../src/main2.c:144:25: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/main2.o] Greška 1
+22:23:19 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9194	    372	   2274	  11840	   2e40	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:25:05 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9186	    372	   2274	  11832	   2e38	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:25:22 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9186	    372	   2274	  11832	   2e38	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:25:34 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9182	    372	   2268	  11822	   2e2e	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:25:46 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+22:31:40 **** Clean-only build of configuration Debug for project lv_2_app ****
+make clean 
+rm -rf  ./src/main2.o  ./src/main2.d  lv_2_app.elf.size  lv_2_app.elf.elfcheck  lv_2_app.elf
+' '
+22:31:40 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:209:6: warning: unused variable 'timeMS' [-Wunused-variable]
+../src/main.c:205:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/main2.o: In function `main':
+F:\DRS\koscak\LV2_koscak\SDK\lv_2_app\Debug/../src/main2.c:43: multiple definition of `main'
+./src/main.o:F:\DRS\koscak\LV2_koscak\SDK\lv_2_app\Debug/../src/main.c:44: first defined here
+collect2: ld returned 1 exit status
+make: *** [lv_2_app.elf] Greška 1
+22:33:36 **** Clean-only build of configuration Debug for project lv_2_app ****
+make clean 
+rm -rf  ./src/main.o ./src/main2.o  ./src/main.d ./src/main2.d  lv_2_app.elf.size  lv_2_app.elf.elfcheck  lv_2_app.elf
+' '
+22:33:36 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:209:6: warning: unused variable 'timeMS' [-Wunused-variable]
+../src/main.c:205:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/main2.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main2.d" -MT"src/main2.d" -o "src/main2.o" "../src/main2.c"
+'Finished building: ../src/main2.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/main2.o: In function `main':
+F:\DRS\koscak\LV2_koscak\SDK\lv_2_app\Debug/../src/main2.c:43: multiple definition of `main'
+./src/main.o:F:\DRS\koscak\LV2_koscak\SDK\lv_2_app\Debug/../src/main.c:44: first defined here
+collect2: ld returned 1 exit status
+make: *** [lv_2_app.elf] Greška 1
+22:33:40 **** Clean-only build of configuration Debug for project lv_2_app ****
+make clean 
+rm -rf  ./src/main.o ./src/main2.o  ./src/main.d ./src/main2.d  lv_2_app.elf.size  lv_2_app.elf.elfcheck  lv_2_app.elf
+' '
+22:33:41 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:209:6: warning: unused variable 'timeMS' [-Wunused-variable]
+../src/main.c:205:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10204	    388	   2296	  12888	   3258	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:36:04 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:209:6: warning: unused variable 'timeMS' [-Wunused-variable]
+../src/main.c:205:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10204	    388	   2296	  12888	   3258	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:39:08 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:209:6: warning: unused variable 'timeMS' [-Wunused-variable]
+../src/main.c:205:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10204	    388	   2296	  12888	   3258	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:39:28 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:209:6: warning: unused variable 'timeMS' [-Wunused-variable]
+../src/main.c:205:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10204	    388	   2296	  12888	   3258	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:40:17 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:209:6: warning: unused variable 'timeMS' [-Wunused-variable]
+../src/main.c:205:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10196	    388	   2296	  12880	   3250	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:40:47 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:209:6: warning: unused variable 'timeMS' [-Wunused-variable]
+../src/main.c:205:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10204	    388	   2296	  12888	   3258	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:41:11 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:209:6: warning: unused variable 'timeMS' [-Wunused-variable]
+../src/main.c:205:14: warning: unused variable 'InstancePtr' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10200	    388	   2292	  12880	   3250	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:43:28 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:224:2: error: 'timeMs' undeclared (first use in this function)
+../src/main.c:224:2: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/main.o] Greška 1
+22:44:24 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TimerCounterHandler':
+../src/main.c:225:54: error: 'timeMS' undeclared (first use in this function)
+../src/main.c:225:54: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:209:6: warning: variable 'timeMs' set but not used [-Wunused-but-set-variable]
+make: *** [src/main.o] Greška 1
+22:44:33 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10252	    388	   2296	  12936	   3288	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '
+22:44:43 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+22:45:14 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+22:51:20 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+'Finished building libraries'
+22:51:37 **** Auto Build of project lv_2_app_bsp ****
+make -k all 
+libgen -hw ../EDK_hw_platform/system.xml\
+	       -lp F:/DRS/ana/EDK\
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../EDK_hw_platform/system.xml -lp F:/DRS/ana/EDK -pe
+microblaze_0 -log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare
+-mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections
+-fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mno-xl-soft-mul -mxl-barrel-shift -mxl-pattern-compare
+-mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections
+-fdata-sections"'.
+"Compiling common"
+"Compiling standalone";
+"Compiling tmrctr"
+"Compiling gpio"
+"Compiling bram"
+"Compiling intc"
+"Compiling uartlite"
+"Compiling cpu"
+Running execs_generate.
+'Finished building libraries'
+22:51:55 **** Clean-only build of configuration Debug for project lv_2_app ****
+make clean 
+rm -rf  ./src/main.o  ./src/main.d  lv_2_app.elf.size  lv_2_app.elf.elfcheck  lv_2_app.elf
+' '
+22:51:55 **** Auto Build of configuration Debug for project lv_2_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../lv_2_app_bsp/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: lv_2_app.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../lv_2_app_bsp/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lv_2_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lv_2_app.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lv_2_app.elf  |tee "lv_2_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10200	    380	   2292	  12872	   3248	lv_2_app.elf
+'Finished building: lv_2_app.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck lv_2_app.elf -hw ../../EDK_hw_platform/system.xml -pe microblaze_0  |tee "lv_2_app.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../EDK_hw_platform/system.xml -pe microblaze_0
+lv_2_app.elf 
+
+ELF file	: lv_2_app.elf
+elfcheck passed.
+'Finished building: lv_2_app.elf.elfcheck'
+' '

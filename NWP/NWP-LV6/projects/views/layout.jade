@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    style(type="text/css").
+      a{
+        margin-right: 5px;
+      }
+  body
+    div 
+      a(href="/projects") List
+      a(href="/projects/new") Add
+    block content

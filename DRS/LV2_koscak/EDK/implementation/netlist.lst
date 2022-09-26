@@ -1,0 +1,19 @@
+F:\DRS\koscak\LV2_koscak\EDK\implementation\system.ngc 1579038488
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_dip_switches_8bits_wrapper.ngc 1579038429
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_push_buttons_4bits_wrapper.ngc 1579038429
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_rs232_uart_1_wrapper.ngc 1579038429
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_clock_generator_0_wrapper.ngc 1579038459
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_proc_sys_reset_0_wrapper.ngc 1579038429
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_microblaze_0_wrapper.ngc 1579038429
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_mb_plb_wrapper.ngc 1579038429
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_ilmb_wrapper.ngc 1579038429
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_dlmb_wrapper.ngc 1579038429
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_dlmb_cntlr_wrapper.ngc 1579038429
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_ilmb_cntlr_wrapper.ngc 1579038429
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_leds_8bits_wrapper.ngc 1579038429
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_mdm_0_wrapper.ngc 1579038429
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_delay_wrapper.ngc 1579038429
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_interruptcontroller_wrapper.ngc 1579038465
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_lmb_bram_wrapper.ngc 1579038429
+F:/DRS/koscak/LV2_koscak/EDK/implementation/system_mem_bus_mux_0_wrapper.ngc 1579038429
+OK

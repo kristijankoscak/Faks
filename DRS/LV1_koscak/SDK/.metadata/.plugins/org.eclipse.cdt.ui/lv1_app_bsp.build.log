@@ -1,0 +1,6 @@
+17:53:48 **** Auto Build of project lv1_app_bsp ****
+make -k all 
+'Finished building libraries'
+
+17:53:48 Build Finished (took 312ms)
+

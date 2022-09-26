@@ -1,0 +1,11 @@
+.border{
+    border-style:solid !important;
+    border-width: 3px !important;
+}
+.op-02{
+    opacity: 0.2 !important;
+}
+
+.isDisable{
+    cursor: not-allowed;
+}

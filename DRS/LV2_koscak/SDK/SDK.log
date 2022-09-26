@@ -1,0 +1,107 @@
+18:33:51.163 INFO  - Processing command line option -hwspec F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.xml. 
+18:34:59.137 INFO  - Restoring global repository preferences: 
+		 F:\DRS\ana\EDK 
+20:14:32.403 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+20:14:48.884 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+20:15:09.383 INFO  - Processing command line option -hwspec F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.xml. 
+20:15:40.034 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+20:17:28.967 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+20:18:28.309 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+20:18:30.528 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+20:18:30.529 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+20:19:42.667 INFO  - Processing command line option -hwspec F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.xml. 
+20:19:53.530 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+20:19:55.705 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+20:19:55.707 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+20:20:02.222 ERROR - Unexpected error while issuing command {"command": "xdisconnect -cable"} to XMD: java.net.SocketException: Connection reset by peer: socket write error 
+20:21:09.142 INFO  - Processing command line option -hwspec F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.xml. 
+20:21:22.974 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+20:21:25.420 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+20:21:25.421 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+20:24:56.027 ERROR - Unexpected error while issuing command {"command": "xdisconnect -cable"} to XMD: java.net.SocketException: Connection reset by peer: socket write error 
+20:25:57.129 INFO  - Processing command line option -hwspec F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.xml. 
+20:26:36.709 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+20:26:38.980 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+20:26:38.981 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+20:27:05.341 ERROR - Unexpected error while issuing command {"command": "xdisconnect -cable"} to XMD: java.net.SocketException: Connection reset by peer: socket write error 
+20:27:46.038 INFO  - Processing command line option -hwspec F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.xml. 
+20:28:03.079 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+20:29:52.588 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+20:29:54.657 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+20:29:54.660 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+20:30:47.351 INFO  - Restoring global repository preferences: 
+		 F:\DRS\ana\EDK 
+20:36:27.701 ERROR - Unexpected error while issuing command {"command": "xdisconnect -cable"} to XMD: java.net.SocketException: Connection reset by peer: socket write error 
+20:36:53.990 INFO  - Processing command line option -hwspec F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.xml. 
+20:37:09.919 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+20:38:49.385 INFO  - Restoring global repository preferences: 
+		 F:\DRS\ana\EDK 
+20:49:30.596 INFO  - Project EDK_hw_platform's source hardware specification located at F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+20:49:44.276 INFO  - Copied contents of F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.xml into \EDK_hw_platform\system.xml. 
+20:49:44.289 INFO  - Copied contents of F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.bit into \EDK_hw_platform\system.bit. 
+20:49:44.293 INFO  - Copied contents of F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system_bd.bmm into \EDK_hw_platform\system_bd.bmm. 
+20:49:44.745 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+20:49:46.573 INFO  - Updating hardware inferred compiler options for lv_2_app. 
+20:49:46.652 INFO  - Clearing existing target manager status. 
+20:49:46.653 INFO  - Closing and re-opening the MSS file of ther project lv_2_app_bsp 
+20:49:47.065 INFO  - Closing and re-opening the MSS file of ther project lv_2_app_bsp 
+20:49:58.438 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+20:50:14.576 INFO  - Processing command line option -hwspec F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.xml. 
+21:31:53.910 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+21:47:14.245 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+22:04:03.321 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+22:07:51.320 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+22:08:19.124 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+22:08:21.123 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+22:08:21.123 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+22:09:23.679 ERROR - Unexpected error while issuing command {"command": "xdisconnect -cable"} to XMD: java.net.SocketException: Connection reset by peer: socket write error 
+22:09:43.209 INFO  - Processing command line option -hwspec F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.xml. 
+22:09:55.002 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+22:09:57.088 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+22:09:57.089 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+22:10:27.506 ERROR - Unexpected error while issuing command {"command": "xdisconnect -cable"} to XMD: java.net.SocketException: Connection reset by peer: socket write error 
+22:10:48.800 INFO  - Processing command line option -hwspec F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.xml. 
+22:10:58.832 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+22:25:45.228 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+22:44:42.911 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+22:45:13.900 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+22:46:29.034 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+22:51:18.148 INFO  - Processing command line option -hwspec F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.xml. 
+22:51:20.251 INFO  - The hardware specification for project 'EDK_hw_platform' is different from F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.xml. 
+22:51:20.732 INFO  - Copied contents of F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.xml into \EDK_hw_platform\system.xml. 
+22:51:20.740 INFO  - Copied contents of F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system.bit into \EDK_hw_platform\system.bit. 
+22:51:20.740 INFO  - Copied contents of F:\DRS\koscak\LV2_koscak\EDK\SDK\SDK_Export\hw\system_bd.bmm into \EDK_hw_platform\system_bd.bmm. 
+22:51:21.006 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+22:51:22.732 INFO  - Restoring global repository preferences: 
+		 F:\DRS\ana\EDK 
+22:51:23.666 INFO  - Updating hardware inferred compiler options for lv_2_app. 
+22:51:23.713 INFO  - Clearing existing target manager status. 
+22:51:36.643 INFO  - FPGA configured successfully with bitstream "F:/DRS/koscak/LV2_koscak/SDK/EDK_hw_platform/download.bit" 
+22:52:38.736 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
